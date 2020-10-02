@@ -1,0 +1,11 @@
+.imageLoader {
+  height: 30vh;
+  width: 30vh;
+  border: 4px dashed black;
+  border-radius: 10px;
+  transition: .2s ease-in-out
+}
+
+.dragOver {
+  background-color: red;
+}
