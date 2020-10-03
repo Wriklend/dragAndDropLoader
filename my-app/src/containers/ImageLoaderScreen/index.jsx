@@ -6,6 +6,6 @@ import s from './style.module.css'
 export const ImageLoaderScreen = () => {
 
   return <div className={s.loaderWrapper}>
-    <ImageLoader />
+    <ImageLoader className={s.dropBox} />
   </div>
 }
