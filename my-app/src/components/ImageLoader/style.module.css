@@ -1,11 +1,46 @@
 .imageLoader {
-  height: 30vh;
-  width: 30vh;
+  height: 300px;
+  width: 300px;
   border: 4px dashed black;
   border-radius: 10px;
-  transition: .2s ease-in-out
+  transition: .2s ease-in-out;
+  padding: 1vh;
+  position: relative;
+  bottom: 0;
+  left: 0px;
 }
 
-.dragOver {
+.dragEnter {
   background-color: red;
+}
+
+.img {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  background-color: black;
+  position: relative;
+}
+
+.errorText {
+  position: relative;
+  display: black;
+  text-align: center;
+  width: 100%;
+  /* transform: translateX(3%); */
+}
+
+.triggerError {
+  animation-duration: .1s;
+  animation-name: showError;
+  animation-iteration-count: 10;
+  animation-direction: alternate; 
+  /* background-color: red; */
+}
+
+@keyframes showError {
+  from {transform: translateX(-5%)}
+  to {transform: translateX(5%)}
 }
