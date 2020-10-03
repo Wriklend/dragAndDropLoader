@@ -2,8 +2,14 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dropBox {
   margin-top: 10vh;
+}
+
+.btn {
+  margin-top: 15px;
 }

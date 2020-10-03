@@ -1,0 +1,20 @@
+.button {
+  width: 350px;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  color: gray;
+  font-family: 'Segoe UI';
+  font-size: 24px;
+  outline: none;
+  /* letter-spacing: 27px; */
+  padding: 0;
+  font-weight: 300;
+  cursor: pointer;
+  text-align: center;
+  transition: .2s ease-in-out;
+}
+
+.button:hover {
+  color: #4A76A8;
+}
