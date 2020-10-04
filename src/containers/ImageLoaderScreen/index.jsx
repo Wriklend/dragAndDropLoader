@@ -10,6 +10,8 @@ export const ImageLoaderScreen = () => {
 
   const [fileInfo, setFileInfo] = useState({})
 
+  const [error, setError] = useState('')
+
   const sendImage = () => {
     console.log(imgSrc)
     setImgSrc('')
@@ -24,6 +26,8 @@ export const ImageLoaderScreen = () => {
       setImgSrc={setImgSrc}
       fileInfo={fileInfo}
       setFileInfo={setFileInfo}
+      error={error}
+      setError={setError}
 
     />
     <Button

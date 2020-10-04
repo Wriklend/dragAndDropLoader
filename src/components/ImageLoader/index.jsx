@@ -8,11 +8,11 @@ export const ImageLoader = ({
   imgSrc,
   setImgSrc,
   fileInfo,
-  setFileInfo }) => {
+  setFileInfo,
+  error,
+  setError }) => {
 
   const [isDragEnter, setIsDragEnter] = useState(false)
-
-  const [error, setError] = useState('')
 
   const reader = new FileReader()
 

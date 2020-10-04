@@ -3,7 +3,6 @@
   width: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
   padding: 15px;
   align-items: center;
   transition: .2s ease-in-out;
