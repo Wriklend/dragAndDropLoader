@@ -9,6 +9,7 @@
   transition: .2s ease-in-out;
   border: 1px dashed gray;
   text-align: center;
+  position: relative;
   color: gray;
   border-radius: 7px;
   overflow: hidden;
@@ -30,15 +31,19 @@
   pointer-events: none;
 }
 
-.text {
+.dropText {
   font-family: 'Segoe UI';
   font-weight: 300;
   font-size: 27px;
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .dropEnterText {
@@ -46,17 +51,16 @@
 }
 
 .errorText {
-  position: relative;
-  display: black;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
   text-align: center;
   width: 100%;
   pointer-events: none;
-  /* position: absolute; */
-  /* transform: translateX(3%); */
 }
 
 .triggerError {
-  animation: showError .1s 10 ease-out alternate;
+  animation: showError .2s 5 ease-out alternate;
 }
 
 @keyframes showError {
@@ -64,7 +68,7 @@
   to { transform: translateX(5%) }
 }
 
-@keyFrames dropEnterText {
+@keyframes dropEnterText {
   from { opacity: 1}
   to { opacity: .5 }
 }

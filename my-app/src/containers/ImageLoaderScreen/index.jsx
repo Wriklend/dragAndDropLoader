@@ -27,7 +27,7 @@ export const ImageLoaderScreen = () => {
 
     />
     <Button
-      btnText={'Send it!'}
+      btnText={'Send image!'}
       className={s.btn}
       onAction={sendImage} />
   </div>
