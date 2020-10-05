@@ -15,6 +15,8 @@ export const ImageLoaderScreen = () => {
   const sendImage = () => {
     console.log(imgSrc)
     setImgSrc('')
+    setFileInfo({})
+    setError('')
   }
 
   return <div className={s.loaderWrapper}

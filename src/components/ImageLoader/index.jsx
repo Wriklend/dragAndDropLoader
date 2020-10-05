@@ -10,7 +10,8 @@ export const ImageLoader = ({
   fileInfo,
   setFileInfo,
   error,
-  setError }) => {
+  setError 
+}) => {
 
   const [isDragEnter, setIsDragEnter] = useState(false)
 
