@@ -18,18 +18,6 @@
   background-color: #615b5b0e;
 }
 
-.img {
-  height: 85%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 7px;
-  background-color: black;
-  position: relative;
-  pointer-events: none;
-}
-
 .dropText {
   font-family: 'Segoe UI';
   font-weight: 300;
@@ -47,24 +35,6 @@
 
 .dropEnterText {
   animation: dropEnterText .5s infinite ease-out alternate;
-}
-
-.errorText {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  text-align: center;
-  width: 100%;
-  pointer-events: none;
-}
-
-.triggerError {
-  animation: showError .2s 5 ease-out alternate;
-}
-
-@keyframes showError {
-  from { transform: translateX(-5%) }
-  to { transform: translateX(5%) }
 }
 
 @keyframes dropEnterText {

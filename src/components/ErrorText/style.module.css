@@ -1,0 +1,17 @@
+.errorText {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+.triggerError {
+  animation: showError .2s 5 ease-out alternate;
+}
+
+@keyframes showError {
+  from { transform: translateX(-5%) }
+  to { transform: translateX(5%) }
+}

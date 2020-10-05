@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
+import PropTypes from 'prop-types'
 
 import { getValidatedFile } from './utils'
+import { Img } from '../Img'
+import { ErrorText } from '../ErrorText'
 import s from './style.module.css'
 
 export const ImageLoader = ({
@@ -10,7 +13,7 @@ export const ImageLoader = ({
   fileInfo,
   setFileInfo,
   error,
-  setError 
+  setError
 }) => {
 
   const [isDragEnter, setIsDragEnter] = useState(false)
@@ -25,7 +28,7 @@ export const ImageLoader = ({
     setError(reader.error)
   }
 
-  const handleDrop = e => {
+  const handleDrop = useCallback(e => {
     e.preventDefault()
     e.stopPropagation()
     setIsDragEnter(false)
@@ -39,7 +42,7 @@ export const ImageLoader = ({
     } else {
       setError(validatedFile)
     }
-  }
+  }, [fileInfo, reader, setError, setFileInfo])
 
   const dragProps = {
     onDragEnter: () => setIsDragEnter(true),
@@ -48,31 +51,37 @@ export const ImageLoader = ({
     onDrop: handleDrop
   }
 
-  const renderImg = () => <>
-    <div
-      style={{ backgroundImage: `url(${imgSrc})` }}
-      className={s.img} alt="" ></div>
-    <div>{fileInfo.name}</div>'
-  </>
-
-  const renderError = () => <div
-    className={`${s.errorText} ${s.triggerError}`} >
-    {error}
+  return <div
+    className={`${s.imageLoader} ${className} ${isDragEnter && s.dragEnter}`}
+    {...dragProps}
+  >
+    {imgSrc
+      ? <Img imgSrc={imgSrc} fileName={fileInfo.name} />
+      : <div className={`${s.dropText} ${isDragEnter && s.dropEnterText}`} >
+        {isDragEnter ? 'Drop Me!' :
+          'Drop image here'}
+      </div>
+    }
+    {error && <ErrorText error={error} />}
   </div>
+}
 
-  return <>
-    <div
-      className={`${s.imageLoader} ${className} ${isDragEnter && s.dragEnter}`}
-      {...dragProps}
-    >
-      {imgSrc
-        ? renderImg()
-        : <div className={`${s.dropText} ${isDragEnter && s.dropEnterText}`} >
-          {isDragEnter ? 'Drop Me!' :
-            'Drop image here'}
-        </div>
-      }
-      {error && renderError()}
-    </div>
-  </>
+ImageLoader.propTypes = {
+  className: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string.isRequired,
+  setImgSrc: PropTypes.func.isRequired,
+  fileInfo: PropTypes.object.isRequired,
+  setFileInfo: PropTypes.func.isRequired,
+  error: PropTypes.string.isRequired,
+  setError: PropTypes.func.isRequired
+}
+
+ImageLoader.defaultProps = {
+  className: '',
+  imgSrc: '',
+  setImgSrc: () => { },
+  fileInfo: {},
+  setFileInfo: () => { },
+  error: '',
+  setError: () => { }
 }

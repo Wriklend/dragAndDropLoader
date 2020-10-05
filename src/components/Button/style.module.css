@@ -7,7 +7,6 @@
   font-family: 'Segoe UI';
   font-size: 24px;
   outline: none;
-  /* letter-spacing: 27px; */
   padding: 0;
   font-weight: 300;
   cursor: pointer;
@@ -17,4 +16,9 @@
 
 .button:hover {
   color: #4A76A8;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .5;
 }

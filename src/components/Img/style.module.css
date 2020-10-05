@@ -1,0 +1,11 @@
+.img {
+  height: 85%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  background-color: black;
+  position: relative;
+  pointer-events: none;
+}
